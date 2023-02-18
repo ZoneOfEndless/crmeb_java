@@ -30,7 +30,7 @@ spring:
   redis:
     host: 127.0.0.1 #地址
     port: 6379 #端口
-    password: 
+    password:
     timeout: 10000 # 连接超时时间（毫秒）
     database: 10 #默认数据库
     jedis:
