@@ -54,7 +54,7 @@ public class SystemUserLevelRequest implements Serializable {
 
     @ApiModelProperty(value = "享受折扣")
     @NotNull(message = "折扣不能为空")
-    @Min(value = 1, message = "折扣值不能小于1")
+    @Min(value = 0, message = "折扣值不能小于0")
     @Max(value = 100, message = "折扣值不能大于100")
     private Integer discount;
 

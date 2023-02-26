@@ -37,7 +37,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
         // base64加密获取真正密码
         String encryptPassword = CrmebUtil.encryptPassword(password, name);
-        if (!userDetails.getUser().getPwd().equals(encryptPassword)) {
+//        if (!userDetails.getUser().getPwd().equals(encryptPassword)) {
+//            throw new CrmebException("账号或者密码不正确");
+//        }
+        //目前解除了CrmebUtil.encryptPassword的加密,方便数据库中进行调试
+        if (!userDetails.getUser().getPwd().equals(password)) {
             throw new CrmebException("账号或者密码不正确");
         }
         return new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
